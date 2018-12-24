@@ -1,13 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-  <h1>New comment</h1>
+  <h1>Edit comment</h1>
   <form method="POST" class="post-form">
   {% csrf_token %}
-  {{form.as_p}}
-  <button type="submit" class="save btn btn-default">Post Comment</button>
+  {{ comment.author }}
+  <p>{{ comment.text|safe|linebreaks }}</p>
+  <button type="submit" class="save btn btn-default">Edit Comment</button>
   </form>
   <script>var editor = new MediumEditor('.editable');</script>
 
-    <!-- <h1 class='posttitle loader'>{{ post.title }}</h1> -->
 {% endblock %}
