@@ -69,6 +69,7 @@ def post_publish(request, pk):
 
 @login_required
 def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -82,7 +83,6 @@ def add_comment_to_post(request, pk):
 
 @login_required
 def comment_edit(request, pk):
-    # post = get_object_or_404(Post, pk=pk)
     comment = get_object_or_404(Comment, pk=pk)
 
     if request.method == "POST":
