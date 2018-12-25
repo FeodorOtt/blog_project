@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-  <h1>Edit comment</h1>
+  <h1>Редактирование комментария</h1>
   <form method="POST" class="post-form">
     {% csrf_token %}
     {{form.as_p}}

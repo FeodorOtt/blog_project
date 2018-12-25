@@ -4,10 +4,9 @@
 {% block content %}
   <div class="jumbotron">
 
-    <h2>Please Login: </h2>
-    <h3>(Must be SuperUser, please check admin for issues.)</h3>
+    <h2>Авторизация: </h2>
     {% if form.errors %}
-        <p>Your username and password didn't match.Please try again!</p>
+        <p>Логин и пароль не подходят, попробуйте еще раз!</p>
     {% endif %}
 
     <form method="POST" action="{% url 'login' %}">
